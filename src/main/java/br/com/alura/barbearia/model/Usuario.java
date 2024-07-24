@@ -1,10 +1,12 @@
 package br.com.alura.barbearia.model;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
 public class Usuario {
@@ -25,11 +27,12 @@ public class Usuario {
     @Column(nullable = false)
     private String mensagem;
 
-    @Column(name = "preferencia_contato")
+    @Column(name = "preferencia_contato", nullable = false)
     private String preferenciaContato;
 
+    @Column(nullable = false)
     private String horario;
 
-    @Column(name = "receber_novidade")
+    @Column(name = "receber_novidade", nullable = false)
     private String receberNovidade;
 }

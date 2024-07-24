@@ -5,15 +5,13 @@ import org.springframework.stereotype.Service;
 import br.com.alura.barbearia.model.Usuario;
 import br.com.alura.barbearia.repository.UsuarioRepository;
 import br.com.alura.barbearia.service.exception.DataBaseException;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @Service
 public class UsuarioService {
     
     private final UsuarioRepository repository;
-
-    public UsuarioService(UsuarioRepository repository) {
-        this.repository = repository;
-    }
 
     public Usuario post(Usuario usuario) {
         try {
